@@ -1,0 +1,40 @@
+/* responsive  */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .hero-title { 
+        font-size: 1.75rem; line-height: 1.2; 
+    }
+    .container-custom { 
+        padding-left: 1rem; padding-right: 1rem; 
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .hero-title { 
+        font-size: 2.25rem; 
+    }
+    .container-custom { 
+        padding-left: 1.25rem; padding-right: 1.25rem; 
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero-section { 
+        min-height: 85vh; 
+    }
+    .grid-responsive { 
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container-custom { 
+        padding-left: 2rem; padding-right: 2rem; 
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .container-custom { 
+        max-width: 1150px; 
+    }
+}
+@media screen and (min-width: 1281px) {
+    .container-custom { 
+        max-width: 1280px; 
+    }
+}
