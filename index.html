@@ -4,118 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KivuFlex & Sécurité Industrielle - RDC</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS Link -->
     <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        industrial: {
-                            dark: '#111827',
-                            card: '#1F2937',
-                            yellow: '#F59E0B',
-                            accent: '#D97706',
-                            light: '#F3F4F6'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-industrial-dark text-industrial-light font-sans antialiased selection:bg-industrial-yellow selection:text-industrial-dark">
+<body>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-industrial-dark/90 backdrop-blur-md border-b border-gray-800">
-        <div class="container-custom mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="bg-industrial-yellow text-industrial-dark p-2 rounded-lg font-black text-xl flex items-center justify-center shadow-lg">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-black tracking-wider text-white">KIVU<span class="text-industrial-yellow">FLEX</span></span>
-                    <span class="block text-[10px] text-gray-400 tracking-widest uppercase">Industrie & Sécurité - RDC</span>
-                </div>
+    <header class="header">
+        <div class="container-custom header-container">
+            <div class="logo-text">
+                <span class="brand-name">KIVU<span>FLEX</span></span>
+                <span class="brand-sub">Industrie & Sécurité - RDC</span>
             </div>
-            <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold">
-                <a href="#accueil" class="hover:text-industrial-yellow transition-colors">Accueil</a>
-                <a href="#produits" class="hover:text-industrial-yellow transition-colors">Produits & Services</a>
-                <a href="#apropos" class="hover:text-industrial-yellow transition-colors">À propos</a>
-                <a href="#contact" class="bg-industrial-yellow text-industrial-dark px-5 py-2.5 rounded-lg font-bold hover:bg-amber-400 transition-all shadow-md">Devis Express</a>
+            <nav class="nav-desktop" id="desktop-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#produits">Produits & Services</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact" class="btn-devis-header">Devis Express</a>
             </nav>
-            <button id="menu-btn" class="md:hidden text-2xl text-industrial-yellow focus:outline-none">
+            <button id="menu-btn" class="menu-btn" aria-label="Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-industrial-card border-b border-gray-700 px-4 pt-2 pb-6 space-y-3">
-            <a href="#accueil" class="block py-2 text-base hover:text-industrial-yellow">Accueil</a>
-            <a href="#produits" class="block py-2 text-base hover:text-industrial-yellow">Produits & Services</a>
-            <a href="#apropos" class="block py-2 text-base hover:text-industrial-yellow">À propos</a>
-            <a href="#contact" class="block text-center bg-industrial-yellow text-industrial-dark py-3 rounded-lg font-bold mt-2">Devis Express</a>
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#accueil">Accueil</a>
+            <a href="#produits">Produits & Services</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact" class="btn-devis-mobile">Devis Express</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="accueil" class="hero-section relative bg-gradient-to-b from-industrial-dark via-industrial-card to-industrial-dark py-20 lg:py-32 flex items-center border-b border-gray-800">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="container-custom mx-auto px-4 relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div class="lg:w-1/2 space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-industrial-yellow/10 border border-industrial-yellow/30 px-3 py-1.5 rounded-full text-industrial-yellow text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-circle-check"></i> <span>Fiabilité Certifiée aux normes minières</span>
+    <section id="accueil" class="hero-section">
+        <div class="container-custom ">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fa-solid fa-circle-check"></i> <span>Normes minières certifiées</span>
                 </div>
-                <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                    Flexibles Hydrauliques & Sécurité Industrielle en <span class="text-industrial-yellow">RDC</span>
+                <h1 class="hero-title">
+                    Flexibles Hydrauliques & Sécurité Industrielle en <span>RDC</span>
                 </h1>
-                <p class="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0">
+                <p class="hero-desc">
                     Conception, fabrication sur mesure et maintenance de flexibles haute pression pour engins miniers et équipements de protection individuelle (EPI) de pointe.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
-                    <a href="#contact" class="bg-industrial-yellow text-industrial-dark font-extrabold px-8 py-4 rounded-xl hover:bg-amber-400 transition-all text-center shadow-lg shadow-industrial-yellow/20">
-                        Demander un devis <i class="fa-solid fa-arrow-right ml-2"></i>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">
+                        Demander un devis <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#produits" class="border border-gray-600 bg-gray-800/50 text-white font-semibold px-8 py-4 rounded-xl hover:bg-gray-800 transition-all text-center">
+                    <a href="#produits" class="btn-secondary">
                         Nos gammes
                     </a>
                 </div>
-                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-800 text-center lg:text-left">
-                    <div>
-                        <div class="text-2xl font-black text-industrial-yellow">100%</div>
-                        <div class="text-xs text-gray-400">Conforme RDC</div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Conforme RDC</div>
                     </div>
-                    <div>
-                        <div class="text-2xl font-black text-industrial-yellow">24/7</div>
-                        <div class="text-xs text-gray-400">Assistance site</div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Assistance site</div>
                     </div>
-                    <div>
-                        <div class="text-2xl font-black text-industrial-yellow">ISO</div>
-                        <div class="text-xs text-gray-400">Qualité garantie</div>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/2 w-full max-w-lg lg:max-w-none">
-                <div class="relative rounded-2xl overflow-hidden border-2 border-industrial-yellow/40 shadow-2xl bg-industrial-card p-2">
-                    <img src="https://placehold.co/600x400/1F2937/F59E0B?text=Engins+Miniers+et+Flexibles+RDC" alt="Flexibles miniers en RDC" class="rounded-xl w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/600x400/111827/FFFFFF?text=Industrie+RDC'">
-                    <div class="absolute bottom-6 left-6 bg-industrial-dark/90 backdrop-blur-md p-4 rounded-xl border border-gray-700 shadow-lg">
-                        <div class="flex items-center space-x-3">
-                            <div class="bg-industrial-yellow text-industrial-dark p-3 rounded-lg text-lg">
-                                <i class="fa-solid fa-gears"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-white">Prêt pour le terrain minier</div>
-                                <div class="text-xs text-gray-400">Katanga, Kivu, Lualaba...</div>
-                            </div>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-value">ISO</div>
+                        <div class="stat-label">Qualité garantie</div>
                     </div>
                 </div>
             </div>
@@ -123,112 +76,79 @@
     </section>
 
     <!-- Products & Services Section -->
-    <section id="produits" class="py-20 bg-industrial-card/50 border-b border-gray-800">
-        <div class="container-custom mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="text-industrial-yellow text-xs font-bold uppercase tracking-widest bg-industrial-yellow/10 px-3 py-1 rounded-full border border-industrial-yellow/20">Nos Solutions</span>
-                <h2 class="text-3xl font-black text-white">Produits & Services Haut de Gamme</h2>
-                <p class="text-gray-400 text-sm sm:text-base">Conçus pour résister aux conditions extrêmes des exploitations minières et industrielles congolaises.</p>
+    <section id="produits" class="products-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Nos Solutions</span>
+                <h2>Produits & Services Haut de Gamme</h2>
+                <p>Conçus pour résister aux conditions extrêmes des exploitations minières et industrielles.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 grid-responsive">
+            <div class="grid-responsive">
                 <!-- Card 1 -->
-                <div class="bg-industrial-card rounded-2xl p-6 border border-gray-700 hover:border-industrial-yellow transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                <div class="product-card">
                     <div>
-                        <div class="w-14 h-14 bg-industrial-yellow/10 rounded-xl flex items-center justify-center text-industrial-yellow text-2xl mb-6 group-hover:bg-industrial-yellow group-hover:text-industrial-dark transition-colors">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Flexibles Hydrauliques Miniers</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        <h3>Flexibles Hydrauliques Miniers</h3>
+                        <p>
                             Assemblage et sertissage haute pression pour pelles excavatrices, foreuses et camions bennes géants opérant sur les sites miniers.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-700 pt-4">
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Haute résistance à l'abrasion</li>
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Testés sous pression extrême</li>
+                    <ul class="product-list">
+                        <li><i class="fa-solid fa-check"></i> Haute résistance à l'abrasion</li>
+                        <li><i class="fa-solid fa-check"></i> Testés sous pression extrême</li>
                     </ul>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-industrial-card rounded-2xl p-6 border border-gray-700 hover:border-industrial-yellow transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                <div class="product-card">
                     <div>
-                        <div class="w-14 h-14 bg-industrial-yellow/10 rounded-xl flex items-center justify-center text-industrial-yellow text-2xl mb-6 group-hover:bg-industrial-yellow group-hover:text-industrial-dark transition-colors">
-                            <i class="fa-solid fa-shield-dog"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Sécurité Industrielle & EPI</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        <h3>Sécurité Industrielle & EPI</h3>
+                        <p>
                             Équipements de protection individuelle conformes aux normes internationales pour garantir la sécurité absolue de vos opérateurs sur le terrain.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-700 pt-4">
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Casques, gants renforcés, chaussures</li>
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Harnais de sécurité certifiés</li>
+                    <ul class="product-list">
+                        <li><i class="fa-solid fa-check"></i> Casques, gants renforcés, chaussures</li>
+                        <li><i class="fa-solid fa-check"></i> Harnais de sécurité certifiés</li>
                     </ul>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-industrial-card rounded-2xl p-6 border border-gray-700 hover:border-industrial-yellow transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                <div class="product-card">
                     <div>
-                        <div class="w-14 h-14 bg-industrial-yellow/10 rounded-xl flex items-center justify-center text-industrial-yellow text-2xl mb-6 group-hover:bg-industrial-yellow group-hover:text-industrial-dark transition-colors">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Maintenance & Suivi Produit</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        <h3>Maintenance & Suivi Produit</h3>
+                        <p>
                             Services de maintenance préventive et curative sur site, audit de réseaux hydrauliques et interventions rapides pour minimiser vos temps d'arrêt.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-700 pt-4">
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Intervention rapide sur site</li>
-                        <li><i class="fa-solid fa-check text-industrial-yellow mr-2"></i> Suivi numérique de l'usure</li>
+                    <ul class="product-list">
+                        <li><i class="fa-solid fa-check"></i> Intervention rapide sur site</li>
+                        <li><i class="fa-solid fa-check"></i> Suivi numérique de l'usure</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="apropos" class="py-20 bg-industrial-dark">
-        <div class="container-custom mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2 space-y-6">
-                    <span class="text-industrial-yellow text-xs font-bold uppercase tracking-widest bg-industrial-yellow/10 px-3 py-1 rounded-full border border-industrial-yellow/20">Notre Engagement RDC</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">Au cœur du dynamisme industriel de la République Démocratique du Congo</h2>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                        Implantés au cœur des zones minières et industrielles de la RDC, nous comprenons les exigences uniques du terrain congolais. Nos experts s'engagent à fournir des solutions durables qui réduisent les pannes et protègent vos équipes.
-                    </p>
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-industrial-yellow text-industrial-dark p-2 rounded-lg font-bold mt-1">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Réactivité Locale</h4>
-                                <p class="text-gray-400 text-xs sm:text-sm">Disponibilité immédiate de stocks stratégiques pour éviter l'arrêt des chantiers.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-industrial-yellow text-industrial-dark p-2 rounded-lg font-bold mt-1">
-                                <i class="fa-solid fa-handshake"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Partenariat de Confiance</h4>
-                                <p class="text-gray-400 text-xs sm:text-sm">Un accompagnement technique personnalisé de l'installation au suivi à long terme.</p>
-                            </div>
+    <!-- Section Apropos -->
+    <section id="apropos" class="about-section">
+        <div class="container-custom">
+            <div class="about-text">
+                <span class="section-tag">Notre Engagement RDC</span>
+                <h2>Au cœur du dynamisme industriel de la République Démocratique du Congo</h2>
+                <p>
+                    Implantés au cœur des zones minières et industrielles de la RDC, nous comprenons les exigences uniques du terrain congolais. Nos experts s'engagent à fournir des solutions durables qui réduisent les pannes et protègent vos équipes.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Réactivité Locale</h4>
+                            <p>Disponibilité immédiate de stocks stratégiques pour éviter l'arrêt des chantiers.</p>
                         </div>
                     </div>
-                </div>
-                <div class="lg:w-1/2 w-full">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-4">
-                            <img src="https://placehold.co/400x300/1F2937/F59E0B?text=Atelier+Technique" alt="Atelier technique" class="rounded-xl shadow-lg border border-gray-700 w-full object-cover">
-                            <div class="bg-industrial-card p-6 rounded-xl border border-gray-700 text-center">
-                                <div class="text-3xl font-black text-industrial-yellow">+15 ans</div>
-                                <div class="text-xs text-gray-400 mt-1">D'expertise cumulée</div>
-                            </div>
-                        </div>
-                        <div class="space-y-4 pt-8">
-                            <div class="bg-industrial-card p-6 rounded-xl border border-gray-700 text-center">
-                                <div class="text-3xl font-black text-industrial-yellow">100%</div>
-                                <div class="text-xs text-gray-400 mt-1">Sécurité garantie</div>
-                            </div>
-                            <img src="https://placehold.co/400x300/1F2937/F59E0B?text=Securite+Industrielle" alt="Sécurité industrielle" class="rounded-xl shadow-lg border border-gray-700 w-full object-cover">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                            <h4>Partenariat de Confiance</h4>
+                            <p>Un accompagnement technique personnalisé de l'installation au suivi à long terme.</p>
                         </div>
                     </div>
                 </div>
@@ -237,34 +157,33 @@
     </section>
 
     <!-- Contact / Quote Form Section -->
-    <section id="contact" class="py-20 bg-industrial-card/30 border-t border-gray-800">
-        <div class="container-custom mx-auto px-4 max-w-4xl">
-            <div class="bg-industrial-card rounded-3xl p-8 sm:p-12 border border-gray-700 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-industrial-yellow/5 rounded-bl-full pointer-events-none"></div>
-                <div class="text-center max-w-xl mx-auto mb-10 space-y-3">
-                    <span class="text-industrial-yellow text-xs font-bold uppercase tracking-widest bg-industrial-yellow/10 px-3 py-1 rounded-full border border-industrial-yellow/20">Contactez-nous</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white">Besoin d'un Devis ou d'une Intervention ?</h2>
-                    <p class="text-gray-400 text-xs sm:text-sm">Remplissez ce formulaire pour lancer votre projet en toute sérénité.</p>
+    <section id="contact" class="contact-section">
+        <div class="container-custom">
+            <div class="contact-card">
+                <div class="section-header">
+                    <span class="section-tag">Contactez-nous</span>
+                    <h2>Besoin d'un Devis ou d'une Intervention ?</h2>
+                    <p>Remplissez ce formulaire pour lancer votre projet en toute sérénité.</p>
                 </div>
-                <form id="quote-form" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Nom Complet</label>
-                            <input type="text" required placeholder="Ex: Jean-Paul Kabamba" class="w-full bg-industrial-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-industrial-yellow transition-colors">
+                <form id="quote-form" class="form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom Complet</label>
+                            <input type="text" required placeholder="Ex: Jean-Paul Kabamba">
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Entreprise / Mine</label>
-                            <input type="text" required placeholder="Ex: Mining RDC Services" class="w-full bg-industrial-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-industrial-yellow transition-colors">
+                        <div class="form-group">
+                            <label>Entreprise / Mine</label>
+                            <input type="text" required placeholder="Ex: Mining RDC Services">
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Téléphone / WhatsApp</label>
-                            <input type="tel" required placeholder="+243 900 000 000" class="w-full bg-industrial-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-industrial-yellow transition-colors">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Téléphone / WhatsApp</label>
+                            <input type="tel" required placeholder="+243 900 000 000">
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Besoin concerné</label>
-                            <select class="w-full bg-industrial-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-industrial-yellow transition-colors">
+                        <div class="form-group">
+                            <label>Besoin concerné</label>
+                            <select>
                                 <option>Flexibles Hydrauliques Miniers</option>
                                 <option>Équipements de Sécurité & EPI</option>
                                 <option>Maintenance & Suivi Technique</option>
@@ -272,41 +191,38 @@
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Message ou spécifications techniques</label>
-                        <textarea rows="4" required placeholder="Précisez vos références ou dimensions..." class="w-full bg-industrial-dark border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-industrial-yellow transition-colors"></textarea>
+                    <div class="form-group full-width">
+                        <label>Message ou spécifications techniques</label>
+                        <textarea rows="3" required placeholder="Précisez vos références ou dimensions..."></textarea>
                     </div>
-                    <div class="text-center pt-2">
-                        <button type="submit" class="w-full sm:w-auto bg-industrial-yellow text-industrial-dark font-extrabold px-10 py-4 rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-industrial-yellow/20 text-base">
-                            Envoyer la Demande de Devis <i class="fa-solid fa-paper-plane ml-2"></i>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary">
+                            Envoyer la Demande de Devis
                         </button>
                     </div>
                 </form>
-                <!-- Success Notification Box (Replaces alert) -->
-                <div id="success-box" class="hidden mt-6 bg-emerald-900/80 border border-emerald-500 text-emerald-200 p-4 rounded-xl text-center text-sm font-semibold">
-                    <i class="fa-solid fa-circle-check text-lg mr-2"></i> Votre demande a bien été simulée et transmise à notre équipe en RDC ! Nous vous répondrons sous 24h.
+                <!-- Success Notification Box -->
+                <div id="success-box" class="success-box hidden">
+                    <i class="fa-solid fa-circle-check"></i> Votre demande a bien été transmise à notre équipe en RDC ! Nous vous répondrons sous 24h.
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-industrial-dark border-t border-gray-800 py-12 text-gray-400 text-sm">
-        <div class="container-custom mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center space-x-2">
-                <div class="bg-industrial-yellow text-industrial-dark p-2 rounded-lg font-black text-lg flex items-center justify-center">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <span class="text-lg font-bold text-white">KIVU<span class="text-industrial-yellow">FLEX</span> RDC</span>
+    <footer class="footer">
+        <div class="container-custom footer-content">
+            <div class="logo-group">
+                <span class="footer-brand">KIVU<span>FLEX</span> RDC</span>
             </div>
-            <div>
-                <p class="text-xs text-center md:text-left">© 2026 KivuFlex & Sécurité Industrielle. Tous droits réservés.</p>
-                <p class="text-xs text-center md:text-left"> Propulsé par <span class="text-industrial-yellow">Nikko Inc</span> . Kinshasa, RDC</p>
+            <div class="footer-copy">
+                <p>© 2026 KivuFlex & Sécurité Industrielle. Tous droits réservés.</p>
+                <p class="sub-copy">Propulsé par <span>Nikko Inc</span> . Kinshasa, RDC</p>
             </div>
-            <div class="flex space-x-4 text-lg">
-                <a href="#" class="hover:text-industrial-yellow transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="hover:text-industrial-yellow transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" class="hover:text-industrial-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
     </footer>
